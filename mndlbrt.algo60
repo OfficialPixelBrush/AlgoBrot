@@ -1,0 +1,29 @@
+TITLE Mandelbrot
+SUBSCript i
+BEGIN
+    FOR A=-2.0(0.1)2.0 BEGIN
+        FOR B=-2.0(0.1)2.0 BEGIN
+            X=0.0
+            Y=0.0
+            FOR I=0(1)20 BEGIN
+                Z=X*X-Y*Y+A
+                Y=2*X*Y+B
+                IF X*X+Y*Y > 4 BEGIN
+                    GOTO BREAK
+                END
+            END
+            BREAK:
+            IF (I<10) BEGIN
+                PRINT(1D)=0
+            END
+            IF (I>10) BEGIN
+                PRINT(1D)=1
+            END
+            IF (I=10) BEGIN
+                PRINT(1D)=1
+            END
+        END
+        CARR(1)
+    END
+    BELLS(3)
+END
